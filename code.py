@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 #import matplotlib.pyplot as plt
-from sklearn import *
+#from sklearn import *
 #import data
 df = pd.read_csv('cleveland.csv')
 
