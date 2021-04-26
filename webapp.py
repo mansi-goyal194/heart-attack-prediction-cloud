@@ -5,9 +5,9 @@ log_model = pickle.load(open('log_model.pkl','rb'))
 
 @st.cache
 def classify(num):
-    if num==0:
+    if num<1:
         return 'No risk of heart attack'
-    elif num==1:
+    elif num>=1:
         return 'Risky'
     else:
         return 'HEHE'
