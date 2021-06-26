@@ -3,12 +3,14 @@ import pickle
 
 log_model = pickle.load(open('log_model.pkl','rb'))
 
-@st.cache
+
 def classify(num):
-    if num<1:
+    if num<0.9:
         return 'No risk of heart attack'
-    elif num>=1:
-        return 'Risky'
+    elif num>0.9:
+        print(num)
+        return num
+        
     else:
         return 'HEHE'
 
