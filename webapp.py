@@ -2,14 +2,13 @@ import streamlit as st
 import pickle
 
 log_model = pickle.load(open('log_model.pkl','rb'))
-
-
+scaler = pickle.load(open('scaler.pkl','rb'))
 def classify(num):
     if num<0.9:
         return 'No risk of heart attack'
     elif num>0.9:
         print(num)
-        return num
+        return 'Risky'
         
     else:
         return 'HEHE'
@@ -41,11 +40,15 @@ def main():
     thal=st.selectbox('Select thal defect',(3.0,6.0,7.0))
 
     inputs=[[age,sex,cp,restbp,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]]
-
+    for i in range(12):
+        inputs[0][i] = inputs[0][i] - scaler.mean_[i]
+        print(inputs)
     if st.button('Classify'):
         if options=='Logistic Regression':
             prediction = log_model.predict(inputs)
+            print(prediction)
             st.success(classify(prediction))
 
 if __name__ == '__main__':
     main()
+
