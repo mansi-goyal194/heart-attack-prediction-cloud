@@ -70,7 +70,7 @@ print(log_reg.predict(check))
 #from sklearn.neighbors import KNeighborsClassifier
 
 #knn=KNeighborsClassifier(n_neighbors=29)
-#knn.fit(X_train , y_train)
+#knn.fit(X_train , y_tran)
 
 #print(knn.score(X_train,y_train))
 #print(knn.score(X_test, y_test))
