@@ -35,7 +35,7 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.fit_transform(X_test)
-#pickle.dump(scaler, open('scaler.pkl','wb'))
+pickle.dump(scaler, open('scaler.pkl','wb'))
 
 #Logistic Regression Algorithm
 from sklearn.linear_model import LogisticRegression
