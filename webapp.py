@@ -42,7 +42,7 @@ def main():
     inputs=[[age,sex,cp,restbp,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]]
     for i in range(12):
         inputs[0][i] = inputs[0][i] - scaler.mean_[i]
-        print(inputs)
+        #print(inputs)
     if st.button('Classify'):
         if options=='Logistic Regression':
             prediction = log_model.predict(inputs)
